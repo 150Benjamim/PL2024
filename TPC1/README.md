@@ -1,8 +1,15 @@
-# TPC
+# TPC1: Análise de um dataset
 
+## Autor
+- Benjamim Meleiro Rodrigues
+- A93323
+
+## Objetivos
 O objetivo deste TPC é analisar um conjunto de dados sem usar o módulo CSV, criando uma lista ordenada das modalidades desportivas, calculando as percentagens de atletas aptos e inaptos, e determinando a distribuição dos atletas por faixas etárias de 5 anos.
 
-Para isto defini uma função chamada parse_csv que lê um arquivo CSV e extrai informações relevantes para três estruturas de dados: um dicionário (emd_dict), um conjunto (modalidades), e outro dicionário (escaloes).
+## Resolução
+
+Para atingir o objetivo deste trabalho decidi difinir uma função chamada parse_csv que lê um arquivo CSV e extrai informações relevantes para três estruturas de dados: um dicionário (emd_dict), um conjunto (modalidades), e outro dicionário (escaloes).
 
 - O dicionário emd_dict armazena informações sobre os atletas indexados por seu _id. 
 - O conjunto modalidades armazena todas as modalidades desportivas encontradas no arquivo CSV. 
