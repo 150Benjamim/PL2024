@@ -5,7 +5,7 @@
 - A93323
 
 ## Objetivos
-O objetivo deste TPC é criar em Python um pequeno conversor de MarkDown para HTML para os elementos descritos na "Basic Syntax" da ![Cheat Sheet](https://www.markdownguide.org/cheat-sheet/):
+O objetivo deste TPC é criar em Python um pequeno conversor de MarkDown para HTML para os elementos descritos na "Basic Syntax" da ![Cheat Sheet](https://www.markdownguide.org/cheat-sheet/).
 
 
 ## Resolução
