@@ -6,7 +6,7 @@
 
 **bold**
 
-**italic**
+*italic*
 
 ***bold italic***
 

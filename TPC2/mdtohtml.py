@@ -33,27 +33,29 @@ def markdown_to_html(markdown_text):
     markdown_text = re.sub(r'`(.*)`', r'<code>\1</code>', markdown_text, flags=re.MULTILINE)
 
     # Ordered List
-    markdown_text = re.sub(r'((\d+\.\s(.+)\n((?!\d+\.\s(.+))(?<!\n{2}).*\n)*)+)', r'<ol>\n\1</ol>\n', markdown_text)
-    markdown_text = re.sub(r'\d+\.\s(.*)\n((?!\d+\.\s(.+))(?!</ol>)(?<!\n{2})(?P<line>.*)\n)*', r'<li>\1\g<line></li>\n', markdown_text)
+    markdown_text = re.sub(r'((\d+\.\s(.*)(?:\n?)((?!\d+\.\s(.*))(?<!\n{2}).*\n)*)+)', r'<ol>\n\1</ol>\n', markdown_text)
+    markdown_text = re.sub(r'\d+\.\s(.*)(?:\n?)((?:(?!\d+\.\s|\n|</ol>).*(?:\n?))*)', r'<li>\1\2</li>\n', markdown_text)
 
     # Unordered List
-    markdown_text = re.sub(r'((-\s(.+)\n((?!-\s(.+))(?<!\n{2}).*\n)*)+)', r'<ul>\n\1</ul>\n', markdown_text)
-    markdown_text = re.sub(r'-\s(.*)\n((?!-\s(.+))(?!</ul>)(?<!\n{2})(?P<line>.*)\n)*', r'<li>\1\g<line></li>\n', markdown_text)
+    markdown_text = re.sub(r'((-\s(.*)(?:\n?)((?!-\s(.*))(?<!\n{2}).*\n)*)+)', r'<ul>\n\1</ul>\n', markdown_text)
+    markdown_text = re.sub(r'-\s(.*)(?:\n?)((?:(?!-\s|\n|</ul>).*(?:\n?))*)', r'<li>\1\2</li>\n', markdown_text)
     
     return markdown_text
 
 
 def wrap_in_paragraph(contentHTML):
-    return re.sub(r'^(?!\n|<li>|<ul>|</ul>|<ol>|</ol>|<hr>)(.+)', r'<p>\1</p>', contentHTML, flags=re.MULTILINE)
+    return re.sub(r'^(?!\n|<li>|</li>|<ul>|</ul>|<ol>|</ol>|<hr>)(.+)', r'<p>\1</p>', contentHTML, flags=re.MULTILINE)
 
 
 preHTML = """
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <body>
+
 """
 
 postHTML = """
+
 </body>
 </html> 
 """
@@ -69,3 +71,4 @@ pagHTML = preHTML + contentHTML + postHTML
 output_file_path = "output.html"
 with open(output_file_path, "w") as output_file:
     output_file.write(pagHTML)
+
