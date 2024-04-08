@@ -195,4 +195,9 @@ while True:
 
 
 
+data['stock'] = stock
+with open('stock.json', 'w') as file:
+    json.dump(data, file, indent=2)
+
+
 #Como extra pode adicionar um comando para adicionar alguns produtos ao stock existente(produtos novos ou já existentes).
