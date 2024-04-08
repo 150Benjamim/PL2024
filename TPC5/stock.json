@@ -1,0 +1,35 @@
+{
+  "stock": [
+    {
+      "cod": "A01",
+      "nome": "Sumo 330ml",
+      "quant": 13,
+      "preco": 1.5
+    },
+    {
+      "cod": "B02",
+      "nome": "Barra de chocolate",
+      "quant": 10,
+      "preco": 1.0
+    },
+    {
+      "cod": "C03",
+      "nome": "Água mineral 500ml",
+      "quant": 8,
+      "preco": 0.75
+    },
+    {
+      "cod": "D04",
+      "nome": "Barra de cereais",
+      "quant": 7,
+      "preco": 1.25
+    },
+    {
+      "cod": "E05",
+      "nome": "Pacote de batatas fritas",
+      "quant": 12,
+      "preco": 1.75
+    }
+  ]
+}
+
